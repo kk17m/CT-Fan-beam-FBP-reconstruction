@@ -3,7 +3,7 @@
 This repository contains CT image reconstruction using Fan-beam Filtered back-projection. The reconstruction algorithm is applicable to short scan protocol as well. Appropriate sinogram weighting, like differential weighting and parker weighting, can be applied depending on the requirements.   
 
 
-### FILE CONTENTS
+## FILE CONTENTS
 
 * **FFBP_Weighted.m :** *Fan-beam Filtered back-projection function for two dimensional (slice) reconstruction.*
 
