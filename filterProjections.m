@@ -1,13 +1,13 @@
-function [p,sino,Hk,hn] = filterProjections(p_in, filter, DTA,SOD,Fan_sensor_spacing)
+function [p,sino,Hk,hn] = filterProjections(p_in, filter, DTA, SOD, SDD, Fan_sensor_spacing)
 
 p_in = p_in.*(cos(DTA)*SOD);
 p = p_in; 
 
-% Filtering the sinogram 
+% Sinpgram filtering 
 % (Jeffrey A Fessler, "Michigan Image Reconstruction Toolbox," 
 %  http://web.eecs.umich.edu/~fessler/code/index.html).
-[sino,Hk,hn,nn] = fbp_sino_filter(p, degtorad(Fan_sensor_spacing),...
-                                  200, filter, 0);
+[sino,Hk,hn,nn] = fbp_sino_filter(p,degtorad(Fan_sensor_spacing),...
+                                  SDD, filter, 0);
 
 % Following functions are taken fron iradon function
 % Copyright 1993-2013 The MathWorks, Inc.
