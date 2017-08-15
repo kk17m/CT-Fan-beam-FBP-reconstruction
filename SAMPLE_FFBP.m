@@ -5,6 +5,7 @@
 %    Log: Sinogram input.                                     %
 %    start_angle: Starting angular position in degrees.       % 
 %    SOD: Source Object Distance in m.                        %
+%    SDD: Source detector distance.                           %
 %    Fan_angle: Fan beam opening angle in degrees.            %
 %    Norg: Original radial sample size.                       %
 %    weighting: Sinogram weighting (Parker or Differential)   %
@@ -37,6 +38,7 @@ fclose(fileid);
 
 detector_rows = 1;
 SOD = 100; 
+SDD = 200;
 Fan_angle = 28; 
 start_angle = -14; 
 total_angle = 180 + Fan_angle; 
@@ -57,7 +59,7 @@ Log=X-Y;
 %% FFBP Reconstruction
 
 [Reconstruction, Bp_RotationIncrement, Fan_sensor_spacing,Bp_spacing] = ...
-                      FFBP_Weighted(Log, start_angle, SOD, Fan_angle, Norg,...
+                      FFBP_Weighted(Log, start_angle, SOD, SDD, Fan_angle, Norg,...
                                     weighting, OutputSize, total_angle,Filter); 
 Reconstruction(isnan(Reconstruction)) = 0;
 Reconstruction = Reconstruction*Fan_sensor_spacing*Bp_spacing;
