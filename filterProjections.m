@@ -3,10 +3,10 @@ function [p,sino,Hk,hn] = filterProjections(p_in, filter, DTA,SOD,Fan_sensor_spa
 p_in = p_in.*(cos(DTA)*SOD);
 p = p_in; 
 
-% Gain correction and filtering 
+% Filtering the sinogram 
 % (Jeffrey A Fessler, "Michigan Image Reconstruction Toolbox," 
 %  http://web.eecs.umich.edu/~fessler/code/index.html).
-[sino,Hk,hn,nn] = fbp_sino_filter(p,degtorad(Fan_sensor_spacing),...
+[sino,Hk,hn,nn] = fbp_sino_filter(p, degtorad(Fan_sensor_spacing),...
                                   200, filter, 0);
 
 % Following functions are taken fron iradon function
