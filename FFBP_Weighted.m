@@ -1,5 +1,5 @@
 function [Reconstruction, Bp_RotationIncrement, Fan_sensor_spacing,Bp_spacing] = ...
-                            FFBP_Weighted(Log, start_angle, SOD, Fan_angle, Norg,...
+                            FFBP_Weighted(Log, start_angle, SOD, SDD, Fan_angle, Norg,...
                                           weighting,OutputSize,total_angle,Filt)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,6 +9,7 @@ function [Reconstruction, Bp_RotationIncrement, Fan_sensor_spacing,Bp_spacing] =
 %    Log: Sinogram input.                                     %
 %    start_angle: Starting angular position in degrees.       % 
 %    SOD: Source Object Distance in m.                        %
+%    SDD: Source detector distance.                           %
 %    Fan_angle: Fan beam opening angle in degrees.            %
 %    Norg: Original radial sample size.                       %
 %    weighting: Sinogram weighting (Parker or Differential)   %
@@ -108,7 +109,7 @@ mat(isnan(mat)) = 0;
 mat = flipud(mat);
 
 % Gain correction and filtering
-[N_req,Filter] = filterProjections(Log, Filt, DTA, SOD*2,Fan_sensor_spacing);
+[N_req,Filter] = filterProjections(Log, Filt, DTA, SOD, SDD, Fan_sensor_spacing);
 Filter = Filter.*mat;
 
 Reconstruction(Npix,Npix) = 0;
