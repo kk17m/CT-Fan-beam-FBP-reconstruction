@@ -16,3 +16,7 @@ This repository contains CT image reconstruction using Fan-beam Filtered back-pr
 * **fbp_sino_filter.m :** *Filtering (Curved/ Arc detector) as used by Jeffrey A Fessler, "Michigan Image Reconstruction Toolbox,"*
                   
 * **filterProjections.m :** *Filtering as in iradon function (Copyright 1993-2013 The MathWorks, Inc.).*             
+
+### FILE CONTENTS
+
+Taguchi, K. Image Reconstruction Algorithms for X-Ray CT, 189–216. Medical Imaging Technology and Applications Troy Farncombe and Kris Iniewski CRC Press 2013.
