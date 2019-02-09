@@ -17,6 +17,9 @@ This repository contains CT image reconstruction using Fan-beam Filtered back-pr
                   
 * **filterProjections.m :** *Filtering as in iradon function (Copyright 1993-2013 The MathWorks, Inc.).*             
 
-### FILE CONTENTS
+### References
 
-Taguchi, K. Image Reconstruction Algorithms for X-Ray CT, 189–216. Medical Imaging Technology and Applications Troy Farncombe and Kris Iniewski CRC Press 2013.
+* Taguchi, K. Image Reconstruction Algorithms for X-Ray CT, 189–216. Medical Imaging Technology and Applications Troy Farncombe and Kris Iniewski CRC Press 2013.
+
+* D. L. Parker, Optimal short scan convolution reconstruction for fanbeam CT, Medical Physics,
+9, 254–257, 1982.
