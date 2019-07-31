@@ -8,7 +8,7 @@ function [Reconstruction, Bp_RotationIncrement, Fan_sensor_spacing,Bp_spacing] =
 % INPUT:                                                      %
 %    Log: Sinogram input.                                     %
 %    start_angle: Starting angular position in degrees.       % 
-%    SOD: Source Object Distance in m.                        %
+%    SOD: Source Object Distance in mm.                       %
 %    SDD: Source detector distance.                           %
 %    Fan_angle: Fan beam opening angle in degrees.            %
 %    Norg: Original radial sample size.                       %
